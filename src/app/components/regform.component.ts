@@ -18,7 +18,6 @@ export class RegformComponent implements OnInit {
 
   message: string;
   inputData: inputValues;
-  pwdPattern = "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$";
 
 
   constructor(
@@ -39,8 +38,10 @@ export class RegformComponent implements OnInit {
       email: form.value.email, 
       address: form.value.address
     }
-    this.data.changeMessage(`Hello from Siblingform.value${form.value.name}`)
+//    this.data.changeMessage(`Hello from Siblingform.value${form.value.name}`)
 //    this.data.changeMessage(`Hello from Siblingform.value${this.inputData}`)
+    this.data.changeMessage(this.inputData)
+
     console.log("inputData >>>>>",this.inputData)
     this.router.navigate(['/confirm']);
     form.resetForm();

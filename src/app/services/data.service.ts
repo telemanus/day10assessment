@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Observable,of} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Observable, of} from  'rxjs';
 
 export interface inputValues {
   name: string;
@@ -18,17 +19,24 @@ export class DataService {
   
   //private messageSource = new Observable();
   constructor() { }
-
+  private inputData: inputValues;
   
+
   changeMessage(message: string) {
     this.messageSource.next(message);
+  //  this.currentMessage.pipe(data => data.json())
   //  this.currentMessage.pipe(this.message);
     console.log(message);
-    return this.currentMessage;
+  //  return this.currentMessage;
   }
 
-
-/*  changeMessage(inputData: inputValues): Observable<any> {
+/*
+  changeMessage(): Observable<any> {
+    this.currentMessage.pipe();
+    return this.currentMessage.pipe (map(reponse => this.inputData));
+  }
+*/
+  /*  changeMessage(inputData: inputValues): Observable<any> {
     this.messageSource.subscribe(this.inputData)
   }
   */

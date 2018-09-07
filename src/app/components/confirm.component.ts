@@ -29,7 +29,7 @@ export class ConfirmComponent implements OnInit {
     this.data.currentMessage.subscribe(message => this.message = message)
     this.result = this.data;
 
-    console.log('confirm data: ', this.data);
+    console.log('confirm data: ', this.data.currentMessage.source._value, ' <<<');
     console.log('confirm result: ', this.result);
 
   
