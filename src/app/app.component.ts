@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
+
+export interface formDetail {
+  name: string;
+  email: string;
+  address: number;
+}
 
 @Component({
   selector: 'app-root',
@@ -7,4 +13,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day10assessment';
+
 }
