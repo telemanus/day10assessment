@@ -15,7 +15,7 @@
   <mat-form-field>
       <input type="password" placeholder="Your password"
         #pwd="ngModel" 
-        name="password" ngModel matInput password pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+        name="password" ngModel matInput required password pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
       <mat-hint>Your password must be secure</mat-hint>
       <mat-error *ngIf="pwd.hasError('password')">
           Must be a valid and secure password
