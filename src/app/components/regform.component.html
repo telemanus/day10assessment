@@ -1,7 +1,6 @@
 <form #formInput="ngForm" (ngSubmit)="processReg(formInput)"
     fxLayout="column row" fxLayoutGap="10px">
 
-
   <mat-form-field>
         <input type="email" placeholder="Your email"
           #emailField="ngModel"
@@ -14,13 +13,13 @@
 
   <mat-form-field>
       <input type="password" placeholder="Your password"
-        #pwd="ngModel" 
-        name="password" ngModel matInput required password pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$">
+        #password="ngModel" 
+        name="password" ngModel matInput pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$"required>
       <mat-hint>Your password must be secure</mat-hint>
-      <mat-error *ngIf="pwd.hasError('password')">
+      <mat-error>
           Must be a valid and secure password
       </mat-error>
-</mat-form-field>
+  </mat-form-field>
 
   <mat-form-field>
     <input type="text" placeholder="Your name"
